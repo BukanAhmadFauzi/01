@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Uhuy Storage',
+    'title' => 'AdminLTE 3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Uhuy</b> Storage',
-    'logo_img' => 'vendor/adminlte/dist/img/uhuy.jpg',
+    'logo' => '<b>Admin</b>LTE',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -224,66 +224,96 @@ return [
     */
 
     'menu' => [
+        // [
+        //     'text' => 'search',
+        //     'search' => true,
+        //     'topnav' => true,
+        // ],
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
+            'text' => 'User',
+            'url'  => 'admin/user',
+            'can' => 'isAdmin',
+            // 'icon' => 'fas fa-user',
         ],
+
         [
-            'text'        => 'Dashboard',
-            'url'         => 'home',
-            'icon'        => 'fas fa-fw fa-tachometer-alt',
-            
+            'text' => 'Pengelolaan Barang',
+            'url'  => 'product',
+            // 'icon' => 'fas fa-product-hunt',
         ],
+
         [
-            'text'        => 'Users',
-            'url'         => 'admin/user',
-            'icon'        => 'fas fa-fw fa-user',
-            'can'         => 'isAdmin',
+            'text' => 'Kategori Barang',
+            'url'  => 'categorie',
+            // 'icon' => 'fas fa-fw fa-book',
         ],
+
         [
-            'text'        => 'Pengelolaan Barang',
-            'url'         => 'product',
-            'icon'        => 'fas fa-fw fa-archivve',
-            'can'         => ['isUser','isAdmin'],
+            'text' => 'Merek Barang',
+            'url'  => 'brand',
+            // 'icon' => 'fas fa-fw fa-archive',
         ],
+
         [
-            'text'        => 'Merk Barang',
-            'url'         => 'brands',
-            'icon'        => 'fas fa-fw fa-pen',
-            'can'         => ['isUser','isAdmin'],
-        ],
-        [
-            'text'        => 'Kategori Barang',
-            'url'         => 'categories',
-            'icon'        => 'fas fa-fw fa-folder',
-            'can'         => ['isUser','isAdmin'],
-        ],
-        [
-            'text'        => 'Transaksi',
+            'text'        => 'Pengambilan Barang',
             'url'         => 'take',
             'icon'        => 'fas fa-fw fa-exchange-alt',
             'can'         => ['isUser','isAdmin'],
         ],
+
         [
-            'text'        => 'Laporan',
-            'icon'        => 'fas fa-fw fa-book',
-            'can'         => 'isAdmin',
-            'submenu'     =>[
-                                [
-                                    'text'        => ' Laporan Barang Masuk',
-                                    'url'         => 'Admin/reportin',
-                                    'icon'        => 'fas fa-fw fa-download',
-                                ],
-                                [
-                                    'text'        => 'Laporan Barang Keluar',
-                                    'url'         => 'Admin/reportout',
-                                    'icon'        => 'fas fa-fw fa-upload',
-                                ],
-                            ]
+            'text'    => 'Transaksi',
+            'icon'    => 'fas fa-fw fa-share',
+            'can'     => 'isAdmin',
+            'submenu' => [
+                [
+                    'text' => 'Laporan Barang Masuk',
+                    'url'  => 'admin/reportin',
+                ],
+
+                [
+                    'text' => 'Laporan Barang Keluar',
+                    'url'  => 'admin/reportout',
+                ],
+            ],
         ],
-        ],
-        
+
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        // ['header' => 'account_settings'],
+        // [
+        //     'text' => 'profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
+        // [
+        //     'text' => 'change_password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
+
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -318,8 +348,6 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
     |
     */
-
-    
 
     'plugins' => [
         'Datatables' => [
@@ -393,6 +421,7 @@ return [
             ],
         ],
     ],
+
     /*
     |--------------------------------------------------------------------------
     | Livewire
